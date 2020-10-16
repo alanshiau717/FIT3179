@@ -5,38 +5,36 @@
   "title": "Crime In San Francisco",
   "projection": {"type": "albersUsa"},
   "data": {
-        "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/SanFrancisco.Neighborhoods%20(1).json",
-        "format": {"type": "topojson", "feature": "SanFrancisco"}
-      }
-      ,"transform": [
-        {
+    "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/map%20(1).json",
+    "format": {"type": "topojson", "feature": "map (1)"}
+  },
+  "transform": [
+    {
       "lookup": "id",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Crime_Count.csv"
-            },
-            "key": "id",
-            "fields": ["NUMPOINTS", "Population"]
-          }
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Crime_Count.csv"
         },
-        {"calculate": "round(datum.NUMPOINTS/datum.Population * 100000)", "as": "Crime Rate Per 100,000"}
-      ],
-    "mark": {"type": "geoshape", "stroke": "black"},
-    "encoding": {
-      "color": {
-        "field": "Crime Rate Per 100,000",
-        "type": "quantitative",
-        "scale": {"type": "log", "scheme": "reds"}
-      },
-        "tooltip": [
-          {"field": "properties.neighborhood", "type": "nominal", "title": "State"},
-          {"field": "Population", "type" : "quantitative"},
-          {"field": "Crime Rate Per 100,000", "type": "quantitative"}
-    ]
-
+        "key": "id",
+        "fields": ["NUMPOINTS", "Population"]
+      }
+    },
+    {
+      "calculate": "round(datum.NUMPOINTS/datum.Population * 100000)",
+      "as": "Crime Rate Per 100,000"
     }
-
-  
-    
-
+  ],
+  "mark": {"type": "geoshape", "stroke": "black"},
+  "encoding": {
+    "color": {
+      "field": "Crime Rate Per 100,000",
+      "type": "quantitative",
+      "scale": {"type": "log", "scheme": "reds"}
+    },
+    "tooltip": [
+      {"field": "properties.neighborhood", "type": "nominal", "title": "State"},
+      {"field": "Population", "type": "quantitative"},
+      {"field": "Crime Rate Per 100,000", "type": "quantitative"}
+    ]
+  }
 }
