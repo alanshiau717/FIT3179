@@ -5,15 +5,15 @@
   "title": "Crime In San Francisco",
   "projection": {"type": "albersUsa"},
   "data": {
-        "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SanFrancisco.Neighborhoods%20(1).json",
+        "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/SanFrancisco.Neighborhoods%20(1).json",
         "format": {"type": "topojson", "feature": "SanFrancisco"}
-      },
-  "transform": [
+      }
+      ,"transform": [
         {
       "lookup": "id",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/Crime_Count.csv"
+              "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Crime_Count.csv"
             },
             "key": "id",
             "fields": ["NUMPOINTS", "Population"]
