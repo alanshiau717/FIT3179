@@ -8,14 +8,22 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
-
-<h3>Top 10 Highest Offending Crimes</h3>
-<div id="bar_vis"></div>
-<div style="display:inline"></div>
-<h3>Crime In San Francisco</h3>
+<div class="container">
+  <div class = "bar_cart">
+    <h3>Top 10 Highest Offending Crimes</h3>
+  <div id="bar_vis"></div>
+  </div>
+  <div class = "main_text">hello 123 </div>
+  <div class = "map">
+    <h3>Crime In San Francisco</h3>
 <div id="geo_vis"></div>
+  </div>
+  
+</div>
+
+
 <script type="text/javascript">
-  var spec = "js/sf_vis.json";
+  var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/homework10/js/sf_vis.json";
   vegaEmbed('#geo_vis', spec).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
@@ -23,10 +31,30 @@
 
 
 <script type="text/javascript">
-    var spec = "js/bar_char.json";
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/homework10/js/bar_char.json";
     vegaEmbed('#bar_vis', spec).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
 </body>
 </html>
+
+<style>
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 3fr
+  }
+  .bar_chart{
+    grid-column: 1 2;
+    grid-row: 1 2;
+  }
+  .main_text{
+    grid-column: 2 3;
+    grid-row: 1 2;
+  }
+  .map{
+    grid-column: 1 4;
+    grid-row: 2 3;
+  }
+</style>

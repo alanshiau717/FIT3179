@@ -1,7 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
-  "height": 500,
   "projection": {"type": "albersUsa"},
   "data": {
     "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/map%20(1).json",
