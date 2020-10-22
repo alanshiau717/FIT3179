@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <h2>heldsaghlo</h2>
+<div id="geo_vis"></div>
+<h2>hello2</h2>
+<div id="bar_vis"></div>
+<script type="text/javascript">
+  var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/sf_vis.json";
+  vegaEmbed('#geo_vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+<script type="text/javascript">
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/bar_char.json";
+    vegaEmbed('#bar_vis', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+</html>

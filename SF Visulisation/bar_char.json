@@ -17,10 +17,9 @@
         "filter": "datum.rank <= 10"
       }
     ],
-    "mark": "bar",
     "encoding": {
-      "x": {"field": "Category", "type": "ordinal", "sort":"-y"},
-      "y": {"field": "Frequency", "type": "quantitative"},
+      "y": {"field": "Category", "type": "ordinal", "sort":"-x"},
+      "x": {"field": "Frequency", "type": "quantitative"},
       "color": {"value": "red"}
     },
      "params" : [
@@ -46,5 +45,32 @@
         ],
         "name": "District Selection"
       }}
+    ],
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+        "tooltip": [
+          {"field" : "Frequency", "type": "quantitative"}
+        ]}
+      },
+      {"mark": {
+        "type":"text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5
+      },
+      "encoding": {
+        "text": {"field": "Frequency", "type": "quantitative"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition":{
+            "test": "datum['Category'] == 'LARCENY/THEFT'", 
+            "value" : 1 
+            }, 
+            "value": 0
+        }
+        }
+      } 
     ]
   }
