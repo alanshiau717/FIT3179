@@ -10,13 +10,11 @@
 <body>
 <div class="container">
   <div class = "bar_cart">
-    <h3>Top 10 Highest Offending Crimes</h3>
-  <div id="bar_vis"></div>
+  <div id="bar_vis" style="width:auto; height:auto"></div>
   </div>
-  <div class = "main_text">hello 123 </div>
-  <div class = "map">
-    <h3>Crime In San Francisco</h3>
-<div id="geo_vis"></div>
+  <div class = "main_text" style="width:auto; height:auto">hello 123 </div>
+  <div class = "map_graph" >
+<div id="geo_vis" style="width:auto; height:auto"></div>
   </div>
   
 </div>
@@ -46,15 +44,21 @@
     grid-template-rows: 2fr 3fr
   }
   .bar_chart{
-    grid-column: 1 2;
-    grid-row: 1 2;
+    height: auto;
+    width: auto;
+    grid-column: 1/2;
+    grid-row: 1/2;
   }
   .main_text{
-    grid-column: 2 3;
-    grid-row: 1 2;
+    height: auto;
+    width: auto;
+    grid-column: 2/3;
+    grid-row: 1/2;
   }
-  .map{
-    grid-column: 1 4;
-    grid-row: 2 3;
+  .map_graph{
+    height: auto;
+    width: auto;
+    grid-column: 1/3;
+    grid-row: 2/3;
   }
 </style>
