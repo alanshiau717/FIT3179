@@ -13,3 +13,5 @@ df = df[['Category', 'DayOfWeek', 'IncidntNum']]
 df.rename(columns = {"IncidntNum": "Count"}, inplace = True)
 
 df.to_csv("SF Visulisation/crime_by_day.csv")
+
+
