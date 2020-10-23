@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "projection": {"type": "albersUsa"},
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/map%20(1).json",
+    "format": {"type": "topojson", "feature": "map (1)"}
+  },
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Crime_Count.csv"
+        },
+        "key": "id",
+        "fields": ["NUMPOINTS", "Population"]
+      }
+    },
+    {
+      "calculate": "round(datum.NUMPOINTS/datum.Population * 100000)",
+      "as": "Crime Rate Per 100,000"
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "black"},
+  "encoding": {
+    "color": {
+      "field": "Crime Rate Per 100,000",
+      "type": "quantitative",
+      "scale": {"type": "log", "scheme": "reds"}
+    },
+    "tooltip": [
+      {"field": "properties.neighborhood", "type": "nominal", "title": "State"},
+      {"field": "Population", "type": "quantitative"},
+      {"field": "Crime Rate Per 100,000", "type": "quantitative"}
+    ]
+  }
+}
