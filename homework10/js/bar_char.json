@@ -15,13 +15,17 @@
         "as": "rank"
       }],
       "sort": [{ "field": "Frequency", "order": "descending" }]
-    }, {
+    }, 
+    {
       "filter": "datum.rank <= 10"
     }
   ],
   "encoding": {
     "y": {"field": "Category", "type": "ordinal", "sort":"-x"},
     "x": {"field": "Frequency", "type": "quantitative"},
+     "tooltip": [
+        {"field" : "Frequency", "type": "quantitative"}
+      ],
     "color": {"value": "red"}
   },
    "params" : [
@@ -52,15 +56,13 @@
     {
       "mark": "bar",
       "encoding": {
-      "tooltip": [
-        {"field" : "Frequency", "type": "quantitative"}
-      ]}
+     }
     },
     {"mark": {
       "type":"text",
       "align": "left",
       "baseline": "middle",
-      "dx": -100,
+      "xOffset": -150,
       "dy": 25,
       "fontSize": 11,
       "text": 
