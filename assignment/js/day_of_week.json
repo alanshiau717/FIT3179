@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {"url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Police_Department_Incidents_-_Previous_Year__2016_.csv"},
+    "width": "container",
+    "height": "container",
+    "transform": [
+      {
+        "aggregate": [{"op": "count", "as": "Frequency"}],
+        "groupby": ["DayOfWeek"]
+      }
+    ],
+    "encoding": {
+      "x": {"field": "DayOfWeek", "type": "ordinal",  "sort": ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday" ]},
+      "y": {"field": "Frequency", "type": "quantitative"},
+       "tooltip": [
+          {"field" : "Frequency", "type": "quantitative"}
+        ],
+      "fill": {"value": "red"},
+      "opacity": {
+            "condition":{
+              "test": "datum['DayOfWeek'] == 'Friday'|| datum['DayOfWeek'] == 'Saturday'", 
+              "value" : 1 
+              }, 
+              "value": 0.3
+          }
+    },
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+       }
+      }
+    ]
+  }
