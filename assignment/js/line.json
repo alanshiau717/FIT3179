@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {"url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Police_Department_Incidents_-_Previous_Year__2016_.csv"},
+    "width": "container",
+    "height": "container",
+    "transform": [
+      {
+        "aggregate": [{"op": "count", "as": "Frequency"}],
+        "groupby": ["Date"]
+      }
+    ],
+    "encoding": {
+      "x": {"field": "Date", "type": "temporal"},
+      "y": {"field": "Frequency", "type": "quantitative"},
+       "tooltip": [
+          {"field" : "Frequency", "type": "quantitative"}
+        ]
+    },
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "color": {"value":"red"}
+       }
+      }
+    ]
+  }
