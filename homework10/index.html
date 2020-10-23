@@ -10,11 +10,19 @@
 <body>
 <div class="container">
   <div class = "bar_cart">
-  <div id="bar_vis" style="width:auto; height:auto"></div>
+    <h3 style="text-align: center">Most Common Crimes</h3>
+    <div id="bar_vis" style="width:100%; height:100%"></div>
   </div>
-  <div class = "main_text" style="width:auto; height:auto">hello 123 </div>
+  <div class = "main_text">
+    <h1 style="text-align: center">Crime in San Fransico</h1>
+    <p>
+      This visualisation explores the different dimensions of crime data in order to reveal interesting trends in the data. Looking at the Bar chart, it can be seen that for every single police district,
+      the most common crime is Larceny/Theft. Looking at crimes by location, we can also reveal an interesting pattern whereby generally speaking, the further you are from the North-East section of San Fransico,
+      the lower the crime per capita becomes.
+  </div>
   <div class = "map_graph" >
-<div id="geo_vis" style="width:auto; height:auto"></div>
+    <h3 style="text-align: center">Crimes by Location</h3>
+<div id="geo_vis" style="width:100%; height:100%"></div>
   </div>
   
 </div>
@@ -40,24 +48,20 @@
 <style>
   .container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 3fr
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 2fr 3fr;
+    width: 100vw;
+    height: 100vh;
   }
   .bar_chart{
-    height: auto;
-    width: auto;
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-  .main_text{
-    height: auto;
-    width: auto;
     grid-column: 2/3;
     grid-row: 1/2;
   }
+  .main_text{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
   .map_graph{
-    height: auto;
-    width: auto;
     grid-column: 1/3;
     grid-row: 2/3;
   }
