@@ -22,19 +22,19 @@
             <div id="day_vis" style="width:100%; height:100%"></div>
         </div>
         <div class = "line_chart">
-            line chart
+            <div id="line_vis" style="width:100%; height:100%"></div>
         </div>
         <div class = "tree_map">
-            tree map   
+            <div id="pie_vis" style="width:100%; height:100%"></div>
         </div>
         <div class = "diverging">
-            divering
+            <div id="diverging_vis" style="width:100%; height:100%"></div>
         </div>
         <div class = "bar_chart">
             <div id="bar_vis" style="width:100%; height:100%"></div>
         </div>
         <div class = "xy plot">
-            xy 123
+            <div id="heat_map_vis" style="width:100%; height:100%"></div>
         </div>
         </div>
 
@@ -52,15 +52,38 @@
     vegaEmbed('#day_vis', spec).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
-  </script>
-  
-  
+  </script>  
   <script type="text/javascript">
       var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/bar_char.json";
       vegaEmbed('#bar_vis', spec).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
       }).catch(console.error);
     </script>
+    <script type="text/javascript">
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/pie_chart.json";
+    vegaEmbed('#pie_vis', spec).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/heat_map.json";
+        vegaEmbed('#heat_map_vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/line.json";
+        vegaEmbed('#line_vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/diverging.json";
+        vegaEmbed('#diverging_vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
 
 <style>
     .container{
