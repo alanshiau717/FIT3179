@@ -10,8 +10,8 @@
       },
       {"calculate": "datum.isResolution == 'Unresolved' ? -datum.Frequency : datum.Frequency", "as": "signed_frequency"}
     ],
-    "width": 300,
-    "height": 200,
+    "width": "container",
+    "height": "container",
     "mark": "bar",
     "encoding": {
       "y": {
