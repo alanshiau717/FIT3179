@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/crime_by_time.csv"
+    },
+    "config": {
+        "view": {
+            "strokeWidth": 0,
+            "step": 13
+        },
+        "axis": {
+            "domain": false
+        }
+    },
+    "transform": [
+      {
+        "aggregate": [{"op": "sum", "as": "Frequency", "field": "Count"}],
+        "groupby": ["Time", "DayOfWeek"]
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+        "y": {
+            "field": "DayOfWeek",
+            "type": "ordinal",
+            "title": "Day"
+        },
+        "x": {
+            "field": "Time",
+            "type": "ordinal",
+            "title": "Time"
+        }
+        ,"color": {
+            "field": "Frequency",
+            "aggregate": "max",
+            "type": "quantitative",
+            "scale":{"scheme": "reds"}
+        }
+      }
+  }
