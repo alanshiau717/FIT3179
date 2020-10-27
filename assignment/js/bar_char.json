@@ -24,7 +24,8 @@
     "y": {"field": "Category", "type": "ordinal", "sort":"-x"},
     "x": {"field": "Frequency", "type": "quantitative"},
      "tooltip": [
-        {"field" : "Frequency", "type": "quantitative"}
+        {"field" : "Frequency", "type": "quantitative"},
+        {"field": "Category", "type": "ordinal"}
       ],
     "color": {"value": "red"}
   },
