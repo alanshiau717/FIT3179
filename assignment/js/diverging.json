@@ -1,34 +1,45 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "description": "A population pyramid for the US in 2000, created using stack. See https://vega.github.io/vega-lite/examples/concat_population_pyramid.html for a variant of this created using concat.",
-    "data": { "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Police_Department_Incidents_-_Previous_Year__2016_.csv"},
-    "transform": [
-      {"calculate": "datum.Resolution == 'NONE' ? 'Unresolved' : 'Resolved'", "as": "isResolution"},
-      {
-        "aggregate": [{"op": "count", "as": "Frequency"}],
-        "groupby": ["PdDistrict", "isResolution"]
-      },
-      {"calculate": "datum.isResolution == 'Unresolved' ? -datum.Frequency : datum.Frequency", "as": "signed_frequency"}
-    ],
-    "width": "container",
-    "height": "container",
-    "mark": "bar",
-    "encoding": {
-      "y": {
-        "field": "PdDistrict",
-        "sort": "descending"
-      },
-      "x": {
-      "aggregate": "sum", "field": "signed_frequency"
-      },
-      "color": {
-        "field": "isResolution",
-        "scale": {"range": ["Green", "Red"]},
-        "legend": {"orient": "top", "title": null}
-      }
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A population pyramid for the US in 2000, created using stack. See https://vega.github.io/vega-lite/examples/concat_population_pyramid.html for a variant of this created using concat.",
+  "data": { "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Police_Department_Incidents_-_Previous_Year__2016_.csv"},
+  "transform": [
+    {"calculate": "datum.Resolution == 'NONE' ? 'Unresolved' : 'Resolved'", "as": "isResolution"},
+    {
+      "aggregate": [{"op": "count", "as": "Frequency"}],
+      "groupby": ["PdDistrict", "isResolution"]
     },
-    "config": {
-      "view": {"stroke": null},
-      "axis": {"grid": false}
+    {"calculate": "datum.isResolution == 'Unresolved' ? -datum.Frequency : datum.Frequency", "as": "signed_frequency"}
+  ],
+  "width": "container",
+  "height": "container",
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "PdDistrict",
+      "sort": "descending",
+      "title": "Police District"
+    },
+    "x": {
+    "aggregate": "sum", "field": "signed_frequency", "title": " Cases Resolved/Unresolved"
+    },
+    "color": {
+      "field": "isResolution",
+      "scale": {"range": ["Green", "Red"]},
+
+      "legend": {"orient": "top", "title": null}
+
+    },
+    "tooltip": [
+        {
+    "aggregate": "sum", "field": "Frequency", "title": "Cases Resolved/Unresolved"},
+    {
+      "field": "PdDistrict"
     }
+
+      ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false}
   }
+}
