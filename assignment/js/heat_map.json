@@ -38,8 +38,16 @@
             "type": "quantitative",
             "scale":{"scheme": "reds"}
         },
-        "tooltip": {
-            
-        }
+        "tooltip": [
+            { "field": "Frequency", "type": "quantitative", "title": "Crime Count"},
+            {              "field": "DayOfWeek",
+                "type": "ordinal",
+                "title": "Day"},
+
+                {            "field": "Time",
+                    "type": "ordinal",
+                    "title": "Time"}
+
+            ]
       }
   }
