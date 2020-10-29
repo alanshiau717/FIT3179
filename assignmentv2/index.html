@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <!-- Import vega-embed -->
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Open+Sans" />
+    </head>
+    <body>
+        <div class = 'main_container'>
+            <div class = "title">Title</div>
+            <div class = "intro">Intro</div>
+            <div class = "time_subheading">Time Subheading</div>
+            <div class = "heat_map">Heat Map</div>
+            <div class = "heat_map_info">Heat Map info</div>
+            <div class = "line_chart">Line Chart</div>
+            <div class = "line_chart_info">Line Chart Info</div>
+            <div class = "crime_day">Crime Day</div>
+            <div class = "crime_day_info">Crime Day Info</div>
+            <div class = "common_crime_subheading">Common Crime Subheading</div>
+            <div class = "common_crime">Common Crime</div>
+            <div class = "common_crime_info">Common Crime Info</div>
+            <div class = "pd_subheading">PD Subheading</div>
+            <div class = "pie_chart">Pie Chart</div>
+            <div class = "pie_chart_info">Pie Chart Info</div>
+            <div class = "diverging_chart">Diverging Chart</div>
+            <div class = "diverging_chart_info">Diverging Chart info</div>
+        </div>
+
+
+    </body>
+<html>
+
+<style>
+    .main_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.25fr 0.75fr 2fr 0.25fr 1fr 1fr 0.25fr 1.5fr 0.25fr 1.5fr;
+        width: 100vw;
+        height: auto;
+    }
+    .title{
+        grid-row: 1/2;
+        grid-column: 1/7;
+    } 
+    .intro{
+        grid-row: 2/3;
+        grid-column: 1/7;
+    }
+    .map{
+        grid-row: 3/4;
+        grid-column: 1/7
+    }
+    .time_subheading{
+        grid-row: 4/5;
+        grid-column: 1/7;
+    }
+    .heat_map{
+        grid-column: 1/3;
+        grid-row: 5/6;
+    }
+    .heat_map_info{
+        grid-column: 1/3;
+        grid-row: 6/7;
+    }
+    .line_chart{
+        grid-column: 3/5;
+        grid-row: 5/6;
+    }
+    .line_chart_info{
+        grid-column: 3/5;
+        grid-row: 6/7;
+    }
+    .crime_day{
+        grid-column: 5/7;
+        grid-row: 5/6;
+    }
+    .crime_day_info{
+        grid-column: 5/7;
+        grid-row: 6/7;
+    }
+    .common_crime_subheading{
+        grid-column: 1/7;
+        grid-row:  7/8;
+    }
+    .common_crime{
+        grid-column: 1/3;
+        grid-row:  8/9;
+    }
+    .common_crime_info{
+        grid-column: 3/7;
+        grid-row:  8/9;
+    }
+    .pd_subheading{
+        grid-column: 1/7;
+        grid-row:  9/10;
+    }
+    .pie_chart{
+        grid-column: 1/4;
+        grid-row:  10/11;
+    }
+    .diverging_chart{
+        grid-column: 4/7;
+        grid-row:  10/11;
+    }
+</style>
+<script type="text/javascript">
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/sf_vis.json";
+    vegaEmbed('#geo_vis', spec).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/day_of_week.json";
+    vegaEmbed('#day_vis', spec).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    </script>  
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/bar_char.json";
+        vegaEmbed('#bar_vis', spec).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/pie_chart.json";
+    vegaEmbed('#pie_vis', spec).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/heat_map.json";
+        vegaEmbed('#heat_map_vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/line.json";
+        vegaEmbed('#line_vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/diverging.json";
+        vegaEmbed('#diverging_vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
