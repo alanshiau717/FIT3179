@@ -23,7 +23,7 @@
       "as": "Crime Rate Per 100,000"
     }
   ],
-  "mark": {"type": "geoshape", "stroke": "black"},
+  "mark": {"type": "geoshape", "stroke": "grey", "strokeDash": [4,4]},
   "encoding": {
     "color": {
       "field": "Crime Rate Per 100,000",
@@ -35,5 +35,12 @@
       {"field": "Population", "type": "quantitative"},
       {"field": "Crime Rate Per 100,000", "type": "quantitative"}
     ]
+  },
+"config": {
+  "style": {
+    "cell": {
+      "stroke": "transparent"
+    }
   }
+}
 }

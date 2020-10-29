@@ -11,11 +11,16 @@
     <body>
         <div class = 'main_container'>
             <div class = "title"><h1>Crime In San Fransico - 2016</h1></div>
-            <div class = "intro"><p>San Francisco is the 16th most populated city in the United States
+            <div class = "intro"><p><b>San Francisco</b> is the 16th most populated city in the United States
                 and the 4th in California. It is also the city with the highest salaries and house prices
                 in the world mainly due to silicon valley being situated there. However, despite this, San Francisco
                 also has one of the highest crime rates in all of America. The San Fransico Department is subdivded into 10 seperate police districts
             responsible for their respective areas.</p></div>
+            <div class="sum-stats-container">   
+                <div style="grid-column: 1/2;  margin: 20px " ><div class = 'sum_stats_title'>2</div> <div class = "sum_stats_desc">Crime Index. Safer than 2% of cities in USA</div></div>
+                <div style="grid-column: 2/3;  margin: 20px "><div class = 'sum_stats_title'>1/16</div> <div class = "sum_stats_desc">Chance Being Victim of Crime</div></div>
+                <div style="grid-column: 3/4;  margin: 20px "><div class = 'sum_stats_title'>150,500</div> <div class = "sum_stats_desc">inicidents of crime in 2016</div></div>
+            </div>
             <div class = "map">
                 <div id="geo_vis" style="width:100%; height:100%" class = "vis"></div>
             </div>
@@ -49,7 +54,8 @@
             </div>
             <div class = "diverging_chart mini-container">
                     <div id="diverging_vis" style="width:100%; height:100%;grid-column:1/2" class = "vis" ></div>
-                    <p style="grid-column:2/3">sdfasdfas</p>
+                    <p style="grid-column:2/3">In San Francisco the majority of cases are unresolved with some police departments having a much higher
+                    resolution rate compared to others.</p>
                 </div>
         </div>
 
@@ -61,8 +67,10 @@
     .main_container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.25fr 0.75fr 4fr 0.25fr 2fr 1fr 0.25fr 2fr 0.25fr 2fr;
+        grid-template-rows: 0.75fr 0.75fr 1fr 4fr 0.75fr 2fr 1fr 0.75fr 2fr 0.75fr 2fr;
         margin: 50px;
+        margin-left: 100px;
+        margin-right: 150px;
     }
     .title{
         grid-row: 1/2;
@@ -72,101 +80,111 @@
         grid-row: 2/3;
         grid-column: 1/7;
     }
-    .map{
+    .sum-stats-container{
         grid-row: 3/4;
+        grid-column: 1/7;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 100%;
+        width: 100%;
+
+
+    }
+    .map{
+        grid-row: 4/5;
         grid-column: 1/7
     }
     .time_subheading{
-        grid-row: 4/5;
+        grid-row: 5/6;
         grid-column: 1/7;
     }
     .heat_map{
         grid-column: 1/3;
-        grid-row: 5/6;
+        grid-row: 6/7;
     }
     .heat_map_info{
         grid-column: 1/3;
-        grid-row: 6/7;
+        grid-row: 7/8;
     }
     .line_chart{
         grid-column: 3/5;
-        grid-row: 5/6;
+        grid-row: 6/7;
     }
     .line_chart_info{
         grid-column: 3/5;
-        grid-row: 6/7;
+        grid-row: 7/8;
     }
     .crime_day{
         grid-column: 5/7;
-        grid-row: 5/6;
+        grid-row: 6/7;
     }
     .crime_day_info{
         grid-column: 5/7;
-        grid-row: 6/7;
+        grid-row: 7/8;
     }
     .common_crime_subheading{
         grid-column: 1/7;
-        grid-row:  7/8;
+        grid-row:  8/9;
     }
     .common_crime{
-        grid-column: 1/3;
-        grid-row:  8/9;
+        grid-column: 1/4;
+        grid-row:  9/10;
     }
     .common_crime_info{
-        grid-column: 3/7;
-        grid-row:  8/9;
+        grid-column: 4/7;
+        grid-row:  9/10;
     }
     .pd_subheading{
         grid-column: 1/7;
-        grid-row:  9/10;
+        grid-row:  10/11;
     }
     .pie_chart{
         grid-column: 1/4;
-        grid-row:  10/11;
+        grid-row:  11/12;
     }
     .diverging_chart{
         grid-column: 4/7;
-        grid-row:  10/11;
+        grid-row:  11/12;
     }
 </style>
 <script type="text/javascript">
-    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/sf_vis.json";
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignmentv2/js/sf_vis.json";
     vegaEmbed('#geo_vis', spec).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     </script>
     <script type="text/javascript">
-    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/day_of_week.json";
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignmentv2/js/day_of_week.json";
     vegaEmbed('#day_vis', spec).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     </script>  
     <script type="text/javascript">
-        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/bar_char.json";
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignmentv2/js/bar_char.json";
         vegaEmbed('#bar_vis', spec).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
     <script type="text/javascript">
-    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/pie_chart.json";
+    var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignmentv2/js/pie_chart.json";
     vegaEmbed('#pie_vis', spec).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     </script>
     <script type="text/javascript">
-        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/heat_map.json";
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignmentv2/js/heat_map.json";
         vegaEmbed('#heat_map_vis', spec).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
     <script type="text/javascript">
-        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/line.json";
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignmentv2/js/line.json";
         vegaEmbed('#line_vis', spec).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
     <script type="text/javascript">
-        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignment/js/diverging.json";
+        var spec = "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/assignmentv2/js/diverging.json";
         vegaEmbed('#diverging_vis', spec).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
@@ -189,11 +207,12 @@
         text-align: center;
         font-size: 25px;
         font-weight: 700;
+        margin-top: 30px;
         color: red;
     }
     h1 { color: red;font-family: "Open Sans"; font-size: 40px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;   text-align: center; } 
     h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
-    p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; margin: 30px} 
+    p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; margin: 30px; margin-top: 0px} 
     blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
     pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
     .sum_stats_title{
