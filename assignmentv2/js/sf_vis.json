@@ -28,7 +28,8 @@
     "color": {
       "field": "Crime Rate Per 100,000",
       "type": "quantitative",
-      "scale": {"type": "log", "scheme": "reds"}
+      "scale": {"type": "log", "scheme": "reds"},
+      "legend": {"orient": "bottom"}
     },
     "tooltip": [
       {"field": "properties.neighborhood", "type": "nominal", "title": "State"},
