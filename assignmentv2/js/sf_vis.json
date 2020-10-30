@@ -29,7 +29,7 @@
       "field": "Crime Rate Per 100,000",
       "type": "quantitative",
       "scale": {"type": "log", "scheme": "reds"},
-      "legend": {"orient": "bottom"}
+      "legend": {"orient": "bottom", "offset": 0}
     },
     "tooltip": [
       {"field": "properties.neighborhood", "type": "nominal", "title": "State"},

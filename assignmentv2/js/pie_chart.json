@@ -18,7 +18,11 @@
       {"field": "PdDistrict", "type": "nominal"},
       {"field": "Frequency", "type": "quantitative"}
 
-    ]
+    ],
+      "opacity": {
+        "condition": {"test": "datum['Frequency'] == '8699'||datum['Frequency'] == '28445'", "value": 1},
+        "value": 0.1
+      }
 
   },
   "view": {"stroke": null}

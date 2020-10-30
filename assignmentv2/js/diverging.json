@@ -4,15 +4,15 @@
   "data": { "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/diverging.csv"},
   "width": "container",
   "height": "container",
-  "mark": "bar",
+  "layer": [  {"mark": "bar",
   "encoding": {
     "y": {
       "field": "PdDistrict",
-      "sort": "descending",
+      "sort": "descending", 
       "title": "Police District"
     },
     "x": {
-    "field": "Prop", "type": "quantitative"},
+    "field": "Prop","type": "quantitative"},
     "color": {
       "field": "Resolution",
       "scale": {"range": ["Blue", "Red"]},
@@ -20,7 +20,15 @@
       "legend": {"orient": "top", "title": null}
 
     }
-  },
+    ,"opacity": {
+        "condition":{
+          "test": "datum['PdDistrict'] == 'RICHMOND' || datum['PdDistrict'] == 'TENDERLOIN'", 
+          "value" : 1 
+          }, 
+          "value": 0.5
+      }
+  }}
+  ],
   "config": {
     "view": {"stroke": null},
     "axis": {"grid": false}

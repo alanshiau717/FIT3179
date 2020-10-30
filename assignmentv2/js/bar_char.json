@@ -59,7 +59,8 @@
       "encoding": {
      }
     },
-    {"mark": {
+    {
+      "mark": {
       "type":"text",
       "align": "left",
       "baseline": "middle",

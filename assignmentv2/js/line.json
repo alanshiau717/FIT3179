@@ -57,6 +57,21 @@
         "value": 0
       }
     }
+  },
+             {
+    "mark": {
+      "type": "point",
+      "filled": true,
+      "text": "New Years Day",
+      "align": "left"
+    },
+    "encoding": {
+      "opacity": {
+        "condition": {"test": "datum['Date'] == '1451566800000' || datum['Date'] == '1482584400000'", "value": 1},
+        "value": 0
+      },
+      "color": {"value": "black"}
+    }
   }
   ]
 } 
