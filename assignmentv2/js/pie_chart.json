@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {"url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Police_Department_Incidents_-_Previous_Year__2016_.csv"},
   "mark": "arc",
-  "title": "Police Department Crime Breakdown",
+  "title": "Crime by Police Department",
   "width": "container",
   "height": "container",
   "transform": [
@@ -13,10 +13,10 @@
     {"filter" : "datum.PdDistrict != ''"}
     ],
   "encoding": {
-    "theta": {"field": "Frequency", "type": "quantitative"},
+    "theta": {"field": "Frequency", "type": "quantitative" },
     "color": {"field": "PdDistrict", "type": "nominal"},
     "tooltip": [
-      {"field": "PdDistrict", "type": "nominal"},
+      {"field": "PdDistrict", "type": "nominal", "title": "Police Department"},
       {"field": "Frequency", "type": "quantitative"}
 
     ],

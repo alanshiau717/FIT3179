@@ -13,7 +13,7 @@
       "title": "Police District"
     },
     "x": {
-    "field": "Prop","type": "quantitative"},
+    "field": "Prop","type": "quantitative", "title": "Proportion"},
     "color": {
       "field": "Resolution",
       "scale": {"range": ["Blue", "Red"]},
