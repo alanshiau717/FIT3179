@@ -11,11 +11,7 @@
     <body>
         <div class = 'main_container'>
             <div class = "title"><h1>Crime In San Fransico - 2016</h1></div>
-            <div class = "intro"><p style = "text-align: center;">San Francisco is the 16th most populated city in the United States
-                and the 4th in California. It is also the city with the highest salaries and house prices
-                in the world mainly due to silicon valley being situated there. Despite this, San Francisco
-                also has <span>one of the highest crime rates in all of America.</span> The San Fransico Department is <span>subdivded into 10 seperate police districts </span>
-            responsible for their respective areas.</p></div>
+       
             <div class="sum-stats-container">   
                 <div style="grid-column: 2/3;  margin: 20px " ><div class = 'sum_stats_title'>2</div> <div class = "sum_stats_desc">Crime Index. Safer than 2% of cities in USA</div></div>
                 <div style="grid-column: 3/4;  margin: 20px "><div class = 'sum_stats_title'>1/16</div> <div class = "sum_stats_desc">Chance Being Victim of Crime</div></div>
@@ -24,6 +20,12 @@
             <div class = "map">
                 <div id="geo_vis" style="width:100%; height:100%" class = "vis"></div>
             </div>
+            <div class = "new_intro"><div class = "chart_title">Introduction</div><p >San Francisco is the 16th most populated city in the United States
+                and the 4th in California. It is also the city with the highest salaries and house prices
+                in the world mainly due to silicon valley being situated there. Despite this, San Francisco
+                also has <span>one of the highest crime rates in all of America.</span> The San Fransico Department is <span>subdivded into 10 seperate police districts </span>
+            responsible for their respective areas. Looking at the Choropleth, it can be seen that SoMa (South Market)
+            is the district with the highest crime rate per capita and <span>as we move further away from the city center (situated in the Top Right section of the map), the lower the crime rate.</span> </p></div>
             <div class = "time_subheading chart_title">Crime by Times</div>
             <div class = "heat_map">
                 <div id="heat_map_vis" style="width:100%; height:100%" class = "vis"></div>
@@ -72,7 +74,7 @@
     .main_container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.75fr 0.75fr 1fr 5fr 0.75fr 2fr 1fr 0.75fr 2fr 0.75fr 2fr;
+        grid-template-rows: 0.75fr 0fr 1fr 5fr 0.75fr 2fr 1fr 0.75fr 2fr 0.75fr 2fr;
         margin: 50px;
         margin-left: 100px;
         margin-right: 150px;
@@ -91,13 +93,15 @@
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
         height: 100%;
-        width: 100%;
-
+        width: 100%;}
+    .new_intro{
+        grid-row: 4/5;
+        grid-column: 5/7
 
     }
     .map{
         grid-row: 4/5;
-        grid-column: 1/7
+        grid-column: 1/5
     }
     .time_subheading{
         grid-row: 5/6;
