@@ -5,6 +5,7 @@
     "data": {
         "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/crime_by_time.csv"
     },
+    "title":"Time of Day",
     "config": {
         "view": {
             "strokeWidth": 0,
@@ -14,6 +15,7 @@
             "domain": false
         }
     },
+
     "transform": [
       {
         "aggregate": [{"op": "sum", "as": "Frequency", "field": "Count"}],

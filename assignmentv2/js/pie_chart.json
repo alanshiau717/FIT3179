@@ -2,6 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {"url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Police_Department_Incidents_-_Previous_Year__2016_.csv"},
   "mark": "arc",
+  "title": "Police Department Crime Breakdown",
   "width": "container",
   "height": "container",
   "transform": [

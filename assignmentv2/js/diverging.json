@@ -4,6 +4,7 @@
   "data": { "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/diverging.csv"},
   "width": "container",
   "height": "container",
+  "title":"Resolved vs Unresolved",
   "layer": [  {"mark": "bar",
   "encoding": {
     "y": {
