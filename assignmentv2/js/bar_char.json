@@ -37,16 +37,28 @@
         "options": [
           null,
           "SOUTHERN",
-          "NORTHERN",
-          "MISSION",
-          "CENTRAL",
-          "BAYVIEW"
+        "NORTHERN",
+        "MISSION",
+        "CENTRAL",
+        "BAYVIEW",
+        "PARK",
+        "NORTHERN",
+        "MISSION",
+        "INGLESIDE",
+        "CENTRAL",
+        "BAYVIEW"
       ],
       "labels": [
         "Show All",
         "SOUTHERN",
         "NORTHERN",
         "MISSION",
+        "CENTRAL",
+        "BAYVIEW",
+        "PARK",
+        "NORTHERN",
+        "MISSION",
+        "INGLESIDE",
         "CENTRAL",
         "BAYVIEW"
       ],

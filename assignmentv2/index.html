@@ -11,10 +11,10 @@
     <body>
         <div class = 'main_container'>
             <div class = "title"><h1>Crime In San Fransico - 2016</h1></div>
-            <div class = "intro"><p><b>San Francisco</b> is the 16th most populated city in the United States
+            <div class = "intro"><p>San Francisco is the 16th most populated city in the United States
                 and the 4th in California. It is also the city with the highest salaries and house prices
                 in the world mainly due to silicon valley being situated there. However, despite this, San Francisco
-                also has one of the highest crime rates in all of America. The San Fransico Department is subdivded into 10 seperate police districts
+                also has <span>one of the highest crime rates in all of America.</span> The San Fransico Department is subdivded into 10 seperate police districts
             responsible for their respective areas.</p></div>
             <div class="sum-stats-container">   
                 <div style="grid-column: 1/2;  margin: 20px " ><div class = 'sum_stats_title'>2</div> <div class = "sum_stats_desc">Crime Index. Safer than 2% of cities in USA</div></div>
@@ -28,35 +28,39 @@
             <div class = "heat_map">
                 <div id="heat_map_vis" style="width:100%; height:100%" class = "vis"></div>
             </div>
-            <p class = "heat_map_info">Looking at this visualisation, it can be clearly seen that crimes are mostly committe in the afternoon around 6pm. 
+            <p class = "heat_map_info">Looking at this visualisation, it can be clearly seen that crimes are mostly committed in the <span>afternoon around 6pm. </span> 
                 There is also a spike in crime rates at lunch time for all days.  </p>
             <div class = "line_chart">
                 <div id="line_vis" style="width:100%; height:100%"class = "vis"></div>
             </div>
-            <p class = "line_chart_info">Crime rates appear to be quite similar throughout the year. One exception being Christmas Day (Dec 25) where there is a large fall in crime and also New Years Day (1 Jan) where there is a large spike in crime rates.
+            <p class = "line_chart_info">Crime rates appear to be quite similar throughout the year. One exception being <span>Christmas Day (Dec 25)</span> where there is a large fall in crime and also 
+                <span>New Years Day (1 Jan)</span>where there is a large spike in crime rates.
             </p>
             <div class = "crime_day">
                 <div id="day_vis" style="width:100%; height:100%" class = "vis"></div>
             </div>
-            <p class = "crime_day_info"> The most popular day to commit a crime is during Friday and Saturday.</p>
+            <p class = "crime_day_info"> The most popular day to commit a crime is during <span>Friday and Saturday.</span> 
+            However, in some police districts such as the Mission district, crime is more evenly distributed throughout the days.
+            This is likely due to these places being residential areas while <span>places with high crime rates in Friday and Saturday which as the Central district are primarily entertainment districts.</span>
+            </p>
             <div class = "common_crime_subheading chart_title">Common Crimes</div>
             <div class = "common_crime">
                 <div id="bar_vis" style="width:100%; height:100%" class = "vis"></div>
             </div>
-            <p class = "common_crime_info"> Larceny/Theft is one of the biggest issued faced by San Fransico Police. It accounts for over 30% of all crime committed in San Fransico.
+            <p class = "common_crime_info"> <span>Larceny/Theft is one of the biggest issued faced by San Fransico Police.</span> It accounts for over 30% of all crime committed in San Fransico.
                 Depending on the district, the second most popular crime is either Other Crimes or Non-Criminal Incidents. Non-Crimnal Incidents are offenses which aren't considered crimes.
                 An exmple of this is minor speeding offenses.
             </p>
             <div class = "pd_subheading chart_title">Police Departments</div>
             <div class = "pie_chart mini-container">
                 <div id="pie_vis" style="width:100%; height:100%;grid-column:1/2" class = "vis"></div>
-                <p style="grid-column:2/3">In San Francisco crimes are quite evenly spread out across the different police departments. The deparment with the highest incidents is the Southern Deparment which oversees South Market, South Beach and Ricon Hill.
-                On the other hand, the deparment with the lowest crime rates is the Park department</p>
+                <p style="grid-column:2/3">In San Francisco crimes are quite evenly spread out across the different police departments. The deparment with the <span>highest incidents is the Southern Deparment</span> which oversees South Market, South Beach and Ricon Hill.
+                On the other hand, the deparment with the <span>lowest crime rates is the Park department</span></p>
             </div>
             <div class = "diverging_chart mini-container">
                     <div id="diverging_vis" style="width:100%; height:100%;grid-column:1/2" class = "vis" ></div>
-                    <p style="grid-column:2/3">In San Francisco the majority of cases are unresolved with some police departments having a much higher
-                    resolution rate compared to others. The district with the highest unresolved rate is Richmond and the one with the lowest rate is Tenderloin.</p>
+                    <p style="grid-column:2/3">In San Francisco the <span>majority of cases are unresolved</span> with some police departments having a much higher
+                    resolution rate compared to others. The district with the <span>highest unresolved rate is Richmond</span> and the one with the <span>lowest rate is Tenderloin.</span></p>
                 </div>
         </div>
 
@@ -229,5 +233,10 @@
         font-size: 13px;
         font-weight: 300;
         color: grey;
+    }
+    span{
+        font-family: "Open Sans"; 
+        color: red;
+        font-size: 14px;
     }
 </style>
