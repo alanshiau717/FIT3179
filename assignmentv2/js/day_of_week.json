@@ -1,56 +1,51 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": "container",
-  "height": "container",
-  "data": {
-      "url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/crime_by_time.csv"
-  },
-  "title":"Time of Day",
-  "config": {
-      "view": {
-          "strokeWidth": 0,
-          "step": 13
-      },
-      "axis": {
-          "domain": false
-      }
-  },
-
-  "transform": [
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {"url": "https://raw.githubusercontent.com/alanshiau717/FIT3179/main/SF%20Visulisation/Police_Department_Incidents_-_Previous_Year__2016_.csv"},
+    "width": "container",
+    "height": "container",
+    "title": "Day of Week","transform": [
+      {"filter" : "District_Select == null|| datum.PdDistrict == District_Select"},
+      {
+        "aggregate": [{"op": "count", "as": "Frequency"}],
+        "groupby": ["DayOfWeek"]}
+    ],"encoding": {
+      "x": {"field": "DayOfWeek", "type": "ordinal",  "sort": ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday" ]},
+      "y": {"field": "Frequency", "type": "quantitative"},
+       "tooltip": [
+          {"field" : "Frequency", "type": "quantitative"}
+        ],
+      "fill": {"value": "#ff6961"},
+      "opacity": {
+            "condition":{
+              "test": "datum['DayOfWeek'] == 'Friday'|| datum['DayOfWeek'] == 'Saturday'", 
+              "value" : 1 
+              }, 
+              "value": 0.3
+          }
+    },
+    "params" : [
     {
-      "aggregate": [{"op": "sum", "as": "Frequency", "field": "Count"}],
-      "groupby": ["Time", "DayOfWeek"]
-    }
+      "name": "District_Select",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+        "MISSION",
+        "CENTRAL"
+      ],
+      "labels": [
+        "Show All",
+        "MISSION",
+        "CENTRAL"
+  
+      ],
+      "name": "District Selection"
+    }}
   ],
-  "mark": "rect",
-  "encoding": {
-      "y": {
-          "field": "DayOfWeek",
-          "type": "ordinal",
-          "title": "Day",
-          "sort": ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday" ]
-      },
-      "x": {
-          "field": "Time",
-          "type": "ordinal",
-          "title": "Time"
-      }
-      ,"color": {
-          "field": "Frequency",
-          "aggregate": "max",
-          "type": "quantitative",
-          "scale":{"scheme": "reds"}
-      },
-      "tooltip": [
-          { "field": "Frequency", "type": "quantitative", "title": "Crime Count"},
-          {              "field": "DayOfWeek",
-              "type": "ordinal",
-              "title": "Day"},
-
-              {            "field": "Time",
-                  "type": "ordinal",
-                  "title": "Time"}
-
-          ]
-    }
-}
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+       }}
+    ]
+  }
