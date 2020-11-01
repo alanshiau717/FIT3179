@@ -28,7 +28,7 @@
     {
       "mark": "line",
       "encoding": {
-        "color": {"value":"red"}
+        "color": {"value":"#ff6961"}
      }
         },
       {
