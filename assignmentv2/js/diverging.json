@@ -10,7 +10,7 @@
     "y": {
       "field": "PdDistrict",
       "sort": "descending", 
-      "title": "Police District"
+      "title": "Police Department"
     },
     "x": {
     "field": "Prop","type": "quantitative", "title": "Proportion"},
