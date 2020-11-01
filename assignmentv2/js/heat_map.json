@@ -27,7 +27,8 @@
         "y": {
             "field": "DayOfWeek",
             "type": "ordinal",
-            "title": "Day"
+            "title": "Day",
+            "sort": ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday" ]
         },
         "x": {
             "field": "Time",
