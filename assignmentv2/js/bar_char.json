@@ -28,7 +28,7 @@
         {"field" : "Frequency", "type": "quantitative"},
         {"field": "Category", "type": "ordinal"}
       ],
-    "color": {"value": "red"}
+    "color": {"value": "#ff6961"}
   },
    "params" : [
     {

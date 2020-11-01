@@ -16,7 +16,7 @@
     "field": "Prop","type": "quantitative", "title": "Proportion"},
     "color": {
       "field": "Resolution",
-      "scale": {"range": ["Blue", "Red"]},
+      "scale": {"range": ["Blue", "#ff6961"]},
 
       "legend": {"orient": "top", "title": null}
 
